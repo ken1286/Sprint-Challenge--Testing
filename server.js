@@ -7,24 +7,26 @@ server.use(helmet());
 server.use(express.json());
 
 let games = [
-  // {
-  //   title: 'Pacman', // required
-  //   genre: 'Arcade', // required
-  //   releaseYear: 1980 // not required
-  // },
-  // {
-  //   title: 'Chrono Trigger', // required
-  //   genre: 'RPG', // required
-  //   releaseYear: 1995 // not required
-  // },
-  // {
-  //   title: 'Donkey Kong Country', // required
-  //   genre: 'Platformer', // required
-  //   releaseYear: 1994 // not required
-  // },
+  {
+    title: 'Pacman', // required
+    genre: 'Arcade', // required
+    releaseYear: 1980 // not required
+  },
+  {
+    title: 'Chrono Trigger', // required
+    genre: 'RPG', // required
+    releaseYear: 1995 // not required
+  },
+  {
+    title: 'Donkey Kong Country', // required
+    genre: 'Platformer', // required
+    releaseYear: 1994 // not required
+  },
 ];
 
 server.get('/games', (req, res) => {
 
   res.status(200).json(games);
 })
+
+module.exports = server;

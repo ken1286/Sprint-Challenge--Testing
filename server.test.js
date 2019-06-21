@@ -31,7 +31,7 @@ describe('server', () => {
       return supertest(server)
         .get('/games')
         .then(res => {
-          expect(res.body).toBe(gamesList);
+          expect(res.body).toEqual(gamesList);
         });
     })
 

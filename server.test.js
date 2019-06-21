@@ -60,6 +60,12 @@ describe('server', () => {
         .expect(422);
     })
 
+    it('responds with json format', () => {
+      return supertest(server)
+        .post('/games')
+        .expect('Content-Type', /json/i)
+    });
+
     it('responds with 201 when successful', () => {
 
     })

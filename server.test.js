@@ -52,7 +52,12 @@ describe('server', () => {
 
   describe('POST /games', () => {
     it('responds with 422 when requirements not met', () => {
+      const gameWithNoGenre = { "title": "Epic" };
 
+      return supertest(server)
+        .post('/games')
+        .send(gameWithNoGenre)
+        .expect(422);
     })
 
     it('responds with 201 when successful', () => {

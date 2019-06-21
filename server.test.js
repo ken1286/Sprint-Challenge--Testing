@@ -42,7 +42,11 @@ describe('server', () => {
     })
 
     it('responds with an array', () => {
-
+      return supertest(server)
+        .get('/games')
+        .then(res => {
+          expect(Array.isArray(res.body)).toBe(true);
+      });
     })
   })
 

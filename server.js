@@ -23,3 +23,8 @@ let games = [
   //   releaseYear: 1994 // not required
   // },
 ];
+
+server.get('/games', (req, res) => {
+
+  res.status(200).json(games);
+})

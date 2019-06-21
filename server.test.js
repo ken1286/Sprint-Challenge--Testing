@@ -46,7 +46,7 @@ describe('server', () => {
         .get('/games')
         .then(res => {
           expect(Array.isArray(res.body)).toBe(true);
-      });
+      })
     })
   })
 

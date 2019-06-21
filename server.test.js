@@ -36,7 +36,9 @@ describe('server', () => {
     })
 
     it('responds with json format', () => {
-
+      return supertest(server)
+        .get('/games')
+        .expect('Content-Type', /json/i)
     })
 
     it('responds with an array', () => {

@@ -67,7 +67,12 @@ describe('server', () => {
     });
 
     it('responds with 201 when successful', () => {
+      const game = { "title": "Epic", "genre": "RPG"};
 
+      return supertest(server)
+        .post('/games')
+        .send(game)
+        .expect(201);
     })
   })
 })
